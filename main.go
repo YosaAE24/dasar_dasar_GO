@@ -11,8 +11,6 @@ func main()  {
 	result := calculation.Add(8, 9)
 	result1 := calculation.Multiply(8, 9)
 
-	fmt.Println("Ini penjumlahan")
-	fmt.Println(result)
-	fmt.Println("Ini perkalian")
-	fmt.Println(result1)
+	fmt.Println("Ini penjumlahan", result)
+	fmt.Println("Ini perkalian", result1)
 }
