@@ -18,6 +18,18 @@ type Group struct {
 	IsAvailable bool
 }
 
+func (group Group) displayGroup()  {
+	fmt.Printf("Name: %s", group.Name)
+	fmt.Println(" ")
+	fmt.Printf("Member Count: %d", len(group.Users))
+	fmt.Println(" ")
+
+	fmt.Print("Name Users: ")
+	for _, user := range group.Users {
+		fmt.Print(user.firstName, " ", user.lastName, ", ")
+	}
+}
+
 func main() {
 	user1 := User{
 		//mengisi field nya secara langsung
@@ -43,23 +55,14 @@ func main() {
 	users := []User{user1, user2}
 	group := Group{"Gamer", user1, users, true}
 
-	displayGroup(group)
+	group.displayGroup()
 
 	// fmt.Println(displayUser1)
 	// fmt.Println(displayUser2)
 }
 
 //struct juga bisa menjadi atribut dari struct yang lain
-func displayGroup(group Group)  {
-	fmt.Printf("Name: %s", group.Name)
-	fmt.Println(" ")
-	fmt.Printf("Member Count: %d", len(group.Users))
-	fmt.Println(" ")
 
-	for _, user := range group.Users {
-		fmt.Println(user.firstName, user.lastName)
-	}
-}
 
 //struct juga bisa dipakai untuk sebuah parameter
 // func displayUser(user User) string {
